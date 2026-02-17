@@ -46,7 +46,7 @@
             aspect-ratio: 3 / 2;
             background: var(--stone);
             border: 1px solid #eee;
-            cursor: pointer; /* Shows it's clickable */
+            cursor: pointer;
         }
 
         .gallery-item img {
@@ -77,13 +77,9 @@
 
         #lightbox img {
             max-width: 90%;
-            max-height: 80%;
+            max-height: 85%;
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
             border: 2px solid #fff;
-        }
-
-        #lightbox:target {
-            display: flex;
         }
 
         .close-lightbox {
@@ -91,17 +87,14 @@
             top: 30px;
             right: 40px;
             color: white;
-            font-size: 40px;
+            font-size: 45px;
             text-decoration: none;
-            font-family: Arial, sans-serif;
+            line-height: 1;
         }
 
         footer { text-align: center; padding: 60px; font-size: 0.7rem; letter-spacing: 2px; color: #999; text-transform: uppercase; border-top: 1px solid #eee; margin-top: 60px; }
 
-        @media (max-width: 1024px) {
-            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-
+        @media (max-width: 1024px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 768px) {
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             h1 { font-size: 2.5rem; }
@@ -130,19 +123,19 @@
         </header>
 
         <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox('assets/images/lance.jpg')"><img src="images/lance.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/iain-annie.jpg')"><img src="images/iain-annie.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/wig.jpg')"><img src="images/wig.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/jason.jpg')"><img src="images/jason.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/david.jpg')"><img src="images/david.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/annie.jpg')"><img src="images/annie.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/lance-lion.jpg')"><img src="images/lance-lion.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/cop1.jpg')"><img src="images/cop1.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('assets/images/lance.jpg')"><img src="assets/images/lance.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('assets/images/iain-annie.jpg')"><img src="assets/images/iain-annie.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('assets/images/wig.jpg')"><img src="assets/images/wig.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('assets/images/jason.jpg')"><img src="assets/images/jason.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('assets/images/david.jpg')"><img src="assets/images/david.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('assets/images/annie.jpg')"><img src="assets/images/annie.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('assets/images/lance-lion.jpg')"><img src="assets/images/lance-lion.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('assets/images/cop1.jpg')"><img src="assets/images/cop1.jpg" alt="Gallery Image"></div>
         </div>
     </div>
 
     <div id="lightbox" onclick="closeLightbox()">
-        <a href="javascript:void(0)" class="close-lightbox">&times;</a>
+        <a href="javascript:void(0)" class="close-lightbox" onclick="closeLightbox()">&times;</a>
         <img id="lightbox-img" src="">
     </div>
 
@@ -153,7 +146,6 @@
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox').style.display = 'flex';
         }
-
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
         }
