@@ -30,20 +30,21 @@
 
         .container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
         
-        header { margin-bottom: 60px; border-bottom: 1px solid #eee; padding-bottom: 30px; }
+        header { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 30px; }
         h1 { font-family: 'Oswald', sans-serif; font-size: 3.5rem; text-transform: uppercase; margin-bottom: 5px; line-height: 1; }
         .subtitle { text-transform: uppercase; letter-spacing: 3px; color: var(--accent); font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 15px; }
 
+        /* Updated Gallery Grid */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(4, 1fr); /* Default 4 per row */
+            gap: 15px; /* Tighter gap for smaller appearance */
         }
 
         .gallery-item {
             position: relative;
             overflow: hidden;
-            aspect-ratio: 4 / 5;
+            aspect-ratio: 3 / 2; /* Wider, shorter stills look smaller */
             background: var(--stone);
             border: 1px solid #eee;
         }
@@ -60,12 +61,21 @@
             transform: scale(1.05);
         }
 
-        footer { text-align: center; padding: 60px; font-size: 0.7rem; letter-spacing: 2px; color: #999; text-transform: uppercase; border-top: 1px solid #eee; margin-top: 100px; }
+        footer { text-align: center; padding: 60px; font-size: 0.7rem; letter-spacing: 2px; color: #999; text-transform: uppercase; border-top: 1px solid #eee; margin-top: 60px; }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); } /* 3 per row on tablets/small laptops */
+        }
 
         @media (max-width: 768px) {
-            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); } /* 2 per row on mobile */
             h1 { font-size: 2.5rem; }
             .contact-bar { justify-content: center; }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid { grid-template-columns: 1fr; } /* 1 per row on very small phones */
         }
     </style>
 </head>
