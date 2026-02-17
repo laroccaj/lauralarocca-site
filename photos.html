@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Laura LaRocca</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --black: #111; --white: #fff; --accent: #9a8459; --stone: #f8f8f8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
+        
+        .contact-bar {
+            background: var(--black);
+            color: var(--white);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: flex-end;
+            gap: 25px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .contact-bar a { color: var(--white); text-decoration: none; transition: 0.3s; }
+        .contact-bar a:hover { color: var(--accent); }
+
+        nav { padding: 20px 5%; display: flex; gap: 30px; background: var(--white); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #eee; }
+        nav a { text-decoration: none; color: var(--black); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        nav a:hover, nav a.active { color: var(--accent); }
+
+        .container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+        
+        header { margin-bottom: 60px; border-bottom: 1px solid #eee; padding-bottom: 30px; }
+        h1 { font-family: 'Oswald', sans-serif; font-size: 3.5rem; text-transform: uppercase; margin-bottom: 5px; line-height: 1; }
+        .subtitle { text-transform: uppercase; letter-spacing: 3px; color: var(--accent); font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 15px; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4 / 5;
+            background: var(--stone);
+            border: 1px solid #eee;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        footer { text-align: center; padding: 60px; font-size: 0.7rem; letter-spacing: 2px; color: #999; text-transform: uppercase; border-top: 1px solid #eee; margin-top: 100px; }
+
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+            .contact-bar { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-bar">
+        <a href="mailto:laura@laroccaskincare.com">laura@laroccaskincare.com</a>
+        <a href="tel:8186920103">818-692-0103</a>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="credits.html">Full Credits</a>
+        <a href="photos.html" class="active">Photos</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <span class="subtitle">Hair Department Head / Hairstylist</span>
+            <h1>Laura LaRocca</h1>
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-top: 10px; color: #666;">Production Gallery</p>
+        </header>
+
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="images/lance.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item"><img src="images/iain-annie.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item"><img src="images/wig.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item"><img src="images/jason.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item"><img src="images/david.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item"><img src="images/annie.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item"><img src="images/lance-lion.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item"><img src="images/cop1.jpg" alt="Gallery Image"></div>
+        </div>
+    </div>
+
+    <footer>&copy; 2026 LAURA LAROCCA &bull; IATSE LOCAL 706</footer>
+
+</body>
+</html>
