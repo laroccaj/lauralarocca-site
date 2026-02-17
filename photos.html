@@ -34,19 +34,19 @@
         h1 { font-family: 'Oswald', sans-serif; font-size: 3.5rem; text-transform: uppercase; margin-bottom: 5px; line-height: 1; }
         .subtitle { text-transform: uppercase; letter-spacing: 3px; color: var(--accent); font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 15px; }
 
-        /* Updated Gallery Grid */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Default 4 per row */
-            gap: 15px; /* Tighter gap for smaller appearance */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
         }
 
         .gallery-item {
             position: relative;
             overflow: hidden;
-            aspect-ratio: 3 / 2; /* Wider, shorter stills look smaller */
+            aspect-ratio: 3 / 2;
             background: var(--stone);
             border: 1px solid #eee;
+            cursor: pointer; /* Shows it's clickable */
         }
 
         .gallery-item img {
@@ -61,21 +61,51 @@
             transform: scale(1.05);
         }
 
+        /* --- LIGHTBOX STYLES --- */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            border: 2px solid #fff;
+        }
+
+        #lightbox:target {
+            display: flex;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+        }
+
         footer { text-align: center; padding: 60px; font-size: 0.7rem; letter-spacing: 2px; color: #999; text-transform: uppercase; border-top: 1px solid #eee; margin-top: 60px; }
 
-        /* Responsive Breakpoints */
         @media (max-width: 1024px) {
-            .gallery-grid { grid-template-columns: repeat(3, 1fr); } /* 3 per row on tablets/small laptops */
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
         @media (max-width: 768px) {
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); } /* 2 per row on mobile */
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             h1 { font-size: 2.5rem; }
             .contact-bar { justify-content: center; }
-        }
-        
-        @media (max-width: 480px) {
-            .gallery-grid { grid-template-columns: 1fr; } /* 1 per row on very small phones */
         }
     </style>
 </head>
@@ -100,18 +130,34 @@
         </header>
 
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="images/lance.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item"><img src="images/iain-annie.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item"><img src="images/wig.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item"><img src="images/jason.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item"><img src="images/david.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item"><img src="images/annie.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item"><img src="images/lance-lion.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item"><img src="images/cop1.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('images/lance.jpg')"><img src="images/lance.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('images/iain-annie.jpg')"><img src="images/iain-annie.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('images/wig.jpg')"><img src="images/wig.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('images/jason.jpg')"><img src="images/jason.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('images/david.jpg')"><img src="images/david.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('images/annie.jpg')"><img src="images/annie.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('images/lance-lion.jpg')"><img src="images/lance-lion.jpg" alt="Gallery Image"></div>
+            <div class="gallery-item" onclick="openLightbox('images/cop1.jpg')"><img src="images/cop1.jpg" alt="Gallery Image"></div>
         </div>
     </div>
 
+    <div id="lightbox" onclick="closeLightbox()">
+        <a href="javascript:void(0)" class="close-lightbox">&times;</a>
+        <img id="lightbox-img" src="">
+    </div>
+
     <footer>&copy; 2026 LAURA LAROCCA &bull; IATSE LOCAL 706</footer>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
