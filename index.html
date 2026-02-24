@@ -8,7 +8,7 @@
     <style>
         :root { --black: #111; --white: #fff; --accent: #9a8459; --stone: #f8f8f8; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); line-height: 1.5; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); line-height: 1.5; }
         
         /* Nav & Contact */
         .contact-bar { background: var(--black); color: var(--white); padding: 10px 5%; display: flex; justify-content: flex-end; gap: 20px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
@@ -17,44 +17,58 @@
         nav a { text-decoration: none; color: var(--black); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
         nav a.active { color: var(--accent); }
 
-        /* Modern Hero Section */
-        .hero { display: flex; flex-wrap: wrap; align-items: stretch; background: var(--stone); min-height: 70vh; }
-        .hero-image { flex: 1; min-width: 350px; background: url('assets/images/laura2.jpg') center/cover no-repeat; min-height: 400px; }
-        .hero-text { flex: 1.2; padding: 60px 8%; display: flex; flex-direction: column; justify-content: center; min-width: 350px; }
-        
-        .hero-text .credentials { font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; color: var(--accent); margin-bottom: 10px; }
-        .hero-text h1 { font-family: 'Oswald', sans-serif; font-size: clamp(3.5rem, 8vw, 5.5rem); line-height: 0.9; text-transform: uppercase; margin-bottom: 20px; }
-        .hero-text p.title-sub { text-transform: uppercase; letter-spacing: 2px; font-weight: 300; font-size: 1rem; margin-bottom: 30px; }
-        
-        .cta-link { display: inline-block; border: 2px solid var(--black); padding: 12px 30px; text-decoration: none; color: var(--black); text-transform: uppercase; font-weight: 700; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s; width: fit-content; }
-        .cta-link:hover { background: var(--black); color: white; }
+        /* Centered Container - Matching Credits Page */
+        .container { padding: 40px 5%; max-width: 1100px; margin: 0 auto; }
 
-        /* Content Layout */
-        .main-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; padding: 80px 5%; max-width: 1300px; margin: 0 auto; }
+        /* Refined Hero Section */
+        .hero { 
+            display: grid; 
+            grid-template-columns: 320px 1fr; 
+            gap: 50px; 
+            align-items: center; 
+            background: var(--stone); 
+            padding: 40px;
+            margin-bottom: 60px;
+            border: 1px solid #eee;
+        }
+        .hero-image { 
+            width: 100%; 
+            height: 420px; 
+            background: url('assets/images/laura2.jpg') center/cover no-repeat; 
+            border: 1px solid #ddd;
+        }
+        .hero-text h1 { font-family: 'Oswald', sans-serif; font-size: 4rem; line-height: 0.9; text-transform: uppercase; margin-bottom: 15px; }
+        .hero-text .credentials { font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; color: var(--accent); margin-bottom: 5px; }
+        .hero-text .title-sub { text-transform: uppercase; letter-spacing: 2px; font-weight: 300; font-size: 0.95rem; margin-bottom: 25px; color: #555; }
         
-        .section-header { font-family: 'Oswald', sans-serif; font-size: 1.8rem; text-transform: uppercase; margin-bottom: 30px; border-bottom: 2px solid var(--black); padding-bottom: 10px; }
+        .cta-link { display: inline-block; background: var(--black); padding: 12px 25px; text-decoration: none; color: white; text-transform: uppercase; font-weight: 700; font-size: 0.75rem; letter-spacing: 1px; transition: 0.3s; }
+        .cta-link:hover { background: var(--accent); }
+
+        /* Main Grid Content */
+        .content-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 60px; }
+        .section-header { font-family: 'Oswald', sans-serif; font-size: 1.6rem; text-transform: uppercase; margin-bottom: 25px; border-bottom: 2px solid var(--black); padding-bottom: 8px; }
         
-        /* Select Credits Styling */
-        .credit-list-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; }
-        .credit-list-item h4 { font-family: 'Oswald', sans-serif; font-size: 1.2rem; text-transform: uppercase; }
-        .credit-list-item span.role { font-size: 0.7rem; font-weight: 700; color: var(--accent); text-transform: uppercase; display: block; }
-        .credit-list-item p { font-size: 0.85rem; color: #666; margin-top: 5px; }
+        /* Select Credits List */
+        .credit-item { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #f4f4f4; }
+        .credit-item .role { font-size: 0.65rem; font-weight: 700; color: var(--accent); text-transform: uppercase; display: block; }
+        .credit-item h4 { font-family: 'Oswald', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin: 2px 0; }
+        .credit-item p { font-size: 0.85rem; color: #666; line-height: 1.4; }
 
-        /* Affiliations Side Column */
-        .aff-card { background: var(--stone); padding: 30px; margin-bottom: 30px; border-left: 4px solid var(--accent); }
-        .aff-card h3 { font-family: 'Oswald', sans-serif; font-size: 1.2rem; text-transform: uppercase; margin-bottom: 15px; }
-        .aff-card p { font-size: 0.85rem; margin-bottom: 8px; }
+        /* Sidebar Affiliations */
+        .sidebar-box { background: var(--stone); padding: 25px; margin-bottom: 25px; }
+        .sidebar-box h3 { font-family: 'Oswald', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 12px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .sidebar-box p { font-size: 0.8rem; margin-bottom: 10px; line-height: 1.4; }
+        .sidebar-box strong { font-size: 0.7rem; text-transform: uppercase; color: var(--accent); display: block; }
 
-        footer { text-align: center; padding: 60px; font-size: 0.7rem; letter-spacing: 2px; color: #999; text-transform: uppercase; border-top: 1px solid #eee; }
+        footer { text-align: center; padding: 60px; font-size: 0.7rem; letter-spacing: 2px; color: #999; text-transform: uppercase; border-top: 1px solid #eee; margin-top: 40px; }
 
-        /* --- MOBILE ADJUSTMENTS --- */
-        @media (max-width: 900px) {
-            .hero { flex-direction: column; }
-            .hero-image { order: 1; min-height: 350px; }
-            .hero-text { order: 2; padding: 40px 5%; text-align: center; align-items: center; }
-            .main-grid { grid-template-columns: 1fr; gap: 50px; padding: 50px 5%; }
-            .contact-bar { justify-content: center; }
-            .section-header { font-size: 1.5rem; }
+        /* --- MOBILE --- */
+        @media (max-width: 850px) {
+            .hero { grid-template-columns: 1fr; padding: 30px; text-align: center; }
+            .hero-image { height: 350px; max-width: 280px; margin: 0 auto; }
+            .hero-text h1 { font-size: 3rem; }
+            .content-grid { grid-template-columns: 1fr; }
+            .contact-bar { justify-content: center; font-size: 0.65rem; }
         }
     </style>
 </head>
@@ -71,85 +85,85 @@
         <a href="photos.html">Photos</a>
     </nav>
 
-    <header class="hero">
-        <div class="hero-image"></div>
-        <div class="hero-text">
-            <div class="credentials">IATSE Local 706 Journeyman</div>
-            <h1>Laura<br>LaRocca</h1>
-            <p class="title-sub">Hair Department Head / Hairstylist</p>
-            <a href="credits.html" class="cta-link">View Full Credit List</a>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-image"></div>
+            <div class="hero-text">
+                <div class="credentials">IATSE Local 706 Journeyman</div>
+                <h1>Laura<br>LaRocca</h1>
+                <p class="title-sub">Hair Department Head / Hairstylist</p>
+                <a href="credits.html" class="cta-link">View Full Credit List</a>
+            </div>
+        </header>
+
+        <div class="content-grid">
+            
+            <section>
+                <h2 class="section-header">Select Television</h2>
+                
+                <div class="credit-item">
+                    <span class="role">Hairstylist</span>
+                    <h4>Georgie and Mandy’s First Marriage</h4>
+                    <p>Warner Brothers Television (Seasons 1–2) &bull; Chuck Lorre</p>
+                </div>
+
+                <div class="credit-item">
+                    <span class="role">Department Head Hair</span>
+                    <h4>Young Sheldon</h4>
+                    <p>Warner Brothers Television (Seasons 1–7) &bull; Chuck Lorre</p>
+                </div>
+
+                <div class="credit-item">
+                    <span class="role">Department Head Hair</span>
+                    <h4>Champions</h4>
+                    <p>Universal Entertainment &bull; Mindy Kaling</p>
+                </div>
+
+                <div class="credit-item">
+                    <span class="role">Personal Hairstylist to Mindy Kaling</span>
+                    <h4>The Mindy Project</h4>
+                    <p>Universal Entertainment (Seasons 2–6)</p>
+                </div>
+
+                <div class="credit-item">
+                    <span class="role">Department Head Hair</span>
+                    <h4>Scrubs</h4>
+                    <p>ABC Studios / Doozer Productions (Pilot + Episodes)</p>
+                </div>
+
+                <div class="credit-item">
+                    <span class="role">Department Head Hair</span>
+                    <h4>Felicity</h4>
+                    <p>Imagine Television (Seasons 1–2) &bull; Keri Russell</p>
+                </div>
+            </section>
+
+            <aside>
+                <h2 class="section-header">Affiliations</h2>
+                
+                <div class="sidebar-box">
+                    <h3>Professional</h3>
+                    <p><strong>Experience</strong>25+ Years Industry Experience</p>
+                    <p><strong>Local 706</strong>Board of Trustees (2025–Present)</p>
+                </div>
+
+                <div class="sidebar-box">
+                    <h3>Philanthropy</h3>
+                    <p><strong>George Lopez Foundation</strong>Board Member (2015–2025)</p>
+                    <p><strong>National Kidney Foundation</strong>Board Member (2011–2015)</p>
+                </div>
+            </aside>
+
         </div>
-    </header>
-
-    <div class="main-grid">
-        <section>
-            <h2 class="section-header">Select Television Credits</h2>
-            
-            <div class="credit-list-item">
-                <span class="role">Hairstylist</span>
-                <h4>Georgie and Mandy’s First Marriage</h4>
-                <p>Warner Brothers Television (Seasons 1–2) &bull; Creator: Chuck Lorre</p>
-            </div>
-
-            <div class="credit-list-item">
-                <span class="role">Department Head Hair</span>
-                <h4>Young Sheldon</h4>
-                <p>Warner Brothers Television (Seasons 1–7) &bull; Cast: Zoe Perry, Annie Potts</p>
-            </div>
-
-            <div class="credit-list-item">
-                <span class="role">Department Head Hair</span>
-                <h4>Champions</h4>
-                <p>Universal Entertainment &bull; Creator: Mindy Kaling</p>
-            </div>
-
-            <div class="credit-list-item">
-                <span class="role">Personal Hairstylist to Mindy Kaling</span>
-                <h4>The Mindy Project</h4>
-                <p>Universal Entertainment (Seasons 2–6) &bull; Cast: Mindy Kaling</p>
-            </div>
-
-            <div class="credit-list-item">
-                <span class="role">Department Head Hair</span>
-                <h4>Scrubs</h4>
-                <p>ABC Studios / Doozer Productions (Pilot + Episodes)</p>
-            </div>
-
-            <div class="credit-list-item">
-                <span class="role">Department Head Hair</span>
-                <h4>Felicity</h4>
-                <p>Imagine Television (Seasons 1–2) &bull; Cast: Keri Russell</p>
-            </div>
-        </section>
-
-        <aside>
-            <h2 class="section-header">Affiliations</h2>
-            
-            <div class="aff-card">
-                <h3>Professional</h3>
-                <p><strong>Board of Trustees</strong><br>IATSE Local 706 (2025–Present)</p>
-                <p><strong>Journeyman Hairstylist</strong><br>25+ Years Industry Experience</p>
-            </div>
-
-            <div class="aff-card">
-                <h3>Philanthropy</h3>
-                <p><strong>Board Member</strong><br>George Lopez Foundation (2015–2025)</p>
-                <p><strong>Board Member</strong><br>National Kidney Foundation (2011–2015)</p>
-            </div>
-        </aside>
     </div>
 
     <footer>
         <div style="margin-bottom: 10px;">
-            <a href="mailto:laura@laroccaskincare.com" style="color: #999; text-decoration: none;">laura@laroccaskincare.com</a> 
-            &nbsp;&bull;&nbsp; 
-            <a href="tel:8186920103" style="color: #999; text-decoration: none;">818-692-0103</a>
-            &nbsp;&bull;&nbsp; 
+            <a href="mailto:laura@laroccaskincare.com" style="color: #999; text-decoration: none;">laura@laroccaskincare.com</a> &nbsp;&bull;&nbsp; 
+            <a href="tel:8186920103" style="color: #999; text-decoration: none;">818-692-0103</a> &nbsp;&bull;&nbsp; 
             <a href="https://www.imdb.com/name/nm0217934/" target="_blank" style="color: #999; text-decoration: none;">IMDb</a>
         </div>
-        <div>
-            &copy; 2026 LAURA LAROCCA &nbsp;&bull;&nbsp; IATSE LOCAL 706
-        </div>
+        &copy; 2026 LAURA LAROCCA &nbsp;&bull;&nbsp; IATSE LOCAL 706
     </footer>
 
 </body>
