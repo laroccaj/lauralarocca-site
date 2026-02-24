@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Laura LaRocca</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --black: #111; --white: #fff; --accent: #9a8459; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: var(--white); 
+            color: var(--black); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content { max-width: 500px; }
+
+        h1 { 
+            font-family: 'Oswald', sans-serif; 
+            font-size: 8rem; 
+            line-height: 1; 
+            color: #eee; 
+            position: absolute; 
+            z-index: -1; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            letter-spacing: -5px;
+        }
+
+        h2 { 
+            font-family: 'Oswald', sans-serif; 
+            text-transform: uppercase; 
+            font-size: 2.5rem; 
+            margin-bottom: 15px; 
+            letter-spacing: 2px;
+        }
+
+        p { 
+            font-size: 1rem; 
+            color: #666; 
+            margin-bottom: 30px; 
+            line-height: 1.5;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+        }
+
+        .back-links {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .back-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>404</h1>
+
+    <div class="content">
+        <h2>Scene Not Found</h2>
+        <p>The page you are looking for has been cut from the final edit, or moved to a different production.</p>
+        
+        <a href="index.html" class="btn">Return to Home</a>
+
+        <div class="back-links">
+            <a href="credits.html">Full Credits</a>
+            <a href="photos.html">Photos</a>
+            <a href="mailto:laura@laroccaskincare.com">Contact</a>
+        </div>
+    </div>
+
+</body>
+</html>
