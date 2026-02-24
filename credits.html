@@ -33,10 +33,12 @@
 
         .show-title { font-family: 'Oswald', sans-serif; font-size: 1.1rem; text-transform: uppercase; display: block; line-height: 1.1; color: var(--black); }
         .season-info { font-size: 0.75rem; color: #666; font-weight: 400; display: block; }
-        .role-label { font-weight: 700; font-size: 0.75rem; text-transform: uppercase; color: var(--black); display: block; margin-bottom: 2px; }
         
+        .role-label { font-weight: 700; font-size: 0.75rem; text-transform: uppercase; color: var(--black); display: block; margin-bottom: 2px; }
         .details-line { font-size: 0.75rem; line-height: 1.4; display: block; }
-        .details-line strong { font-size: 0.65rem; text-transform: uppercase; color: #888; margin-right: 4px; }
+        
+        /* Darkened labels for better print contrast */
+        .details-line strong { font-size: 0.65rem; text-transform: uppercase; color: #666; margin-right: 4px; }
 
         .experience-list { list-style: none; margin-top: 10px; }
         .experience-list li { font-size: 0.85rem; margin-bottom: 5px; padding-left: 15px; position: relative; }
@@ -44,30 +46,15 @@
 
         footer { text-align: center; padding: 40px; font-size: 0.7rem; color: #999; text-transform: uppercase; border-top: 1px solid #eee; margin-top: 40px; }
 
-        /* --- THE PRINT FIX --- */
         @media print {
             nav, .contact-bar, .download-btn { display: none !important; }
-            nav { position: static; } /* Reset sticky position */
-            
-            @page { 
-                margin: 1.5cm; /* Sufficient safety margin for printers */
-            }
-            
+            nav { position: static; } 
+            @page { margin: 1.2cm; }
             .container { padding: 0 !important; width: 100%; max-width: none; }
             header { margin-top: 0; border-bottom: 2px solid #000; padding-bottom: 10px; }
             h1 { font-size: 2.2rem; }
-            
-            .category { 
-                margin-top: 20px; 
-                font-size: 1.2rem; 
-                page-break-after: avoid; 
-            }
-            
-            .credit-entry { 
-                padding: 6px 0; 
-                page-break-inside: avoid; /* Keeps show titles and details together */
-            }
-            
+            .category { margin-top: 20px; font-size: 1.2rem; page-break-after: avoid; }
+            .credit-entry { padding: 6px 0; page-break-inside: avoid; }
             .experience-list li { page-break-inside: avoid; }
             footer { border-top: 1px solid #000; margin-top: 20px; padding: 10px; }
         }
@@ -109,6 +96,108 @@
         <div class="credit-entry">
             <div class="entry-left"><span class="show-title">Young Sheldon</span><span class="season-info">(Series, Seasons 1-7)</span></div>
             <div class="entry-right"><span class="role-label">Dept Head Hair - Warner Brothers TV</span><span class="details-line"><strong>Creator</strong> Chuck Lorre &bull; <strong>Cast</strong> Zoe Perry, Lance Barber, Annie Potts</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">Everything’s Gonna Be Okay</span><span class="season-info">(Series, Season 1)</span></div>
+            <div class="entry-right"><span class="role-label">Dept Head Hair - Avalon / Freeform</span><span class="details-line"><strong>Creator</strong> Josh Thomas &bull; <strong>Cast</strong> Josh Thomas, Kayla Cromer</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">Idiotsitter</span><span class="season-info">(Series, Season 1)</span></div>
+            <div class="entry-right"><span class="role-label">Key Hairstylist - Comedy Central</span><span class="details-line"><strong>Creators</strong> Jillian Bell & Charlotte Newhouse</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">Champions</span><span class="season-info">(Series, Season 1)</span></div>
+            <div class="entry-right"><span class="role-label">Dept Head Hair - Universal Entertainment</span><span class="details-line"><strong>Creator</strong> Mindy Kaling &bull; <strong>Cast</strong> Fortune Feimster, Ginger Gonzaga</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">Loosely Exactly Nicole</span><span class="season-info">(Series, Season 1)</span></div>
+            <div class="entry-right"><span class="role-label">Key Hairstylist - Oui Productions</span><span class="details-line"><strong>Creators</strong> Christian Lander & Christine Zander &bull; <strong>Cast</strong> Nicole Byer, Jacob Wysocki</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">The Mindy Project</span><span class="season-info">(Series, Seasons 2 - 6)</span></div>
+            <div class="entry-right"><span class="role-label">Personal to Mindy Kaling - Universal Entertainment</span><span class="details-line"><strong>Creator</strong> Mindy Kaling &bull; <strong>Cast</strong> Mindy Kaling &bull; <strong>Guest</strong> Reese Witherspoon</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">Stitchers</span><span class="season-info">(Series, Season 1)</span></div>
+            <div class="entry-right"><span class="role-label">Key Hairstylist - Prodco</span><span class="details-line"><strong>Creator</strong> Jeffery Alan Schechter &bull; <strong>Cast</strong> Allison Scagliotti</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">The Fosters</span><span class="season-info">(Series, 31 Episodes)</span></div>
+            <div class="entry-right"><span class="role-label">Key Hairstylist - Freeform Original Production</span><span class="details-line"><strong>Creators</strong> Peter Paige & Bradley Bredeweg &bull; <strong>Cast</strong> Sherri Saum, Teri Polo, Annie Potts</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">Hot Bench</span><span class="season-info">(Series, 100 Episodes)</span></div>
+            <div class="entry-right"><span class="role-label">Dept Head Hair - Big Ticket Productions</span><span class="details-line"><strong>Creator</strong> Judge Judy Sheindlin &bull; <strong>Cast</strong> Patricia DiMango</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">Mixology</span><span class="season-info">(Series, Season 1)</span></div>
+            <div class="entry-right"><span class="role-label">Key Hairstylist - ABC Signature</span><span class="details-line"><strong>Creators</strong> Jon Lucas & Scott Moore &bull; <strong>Cast</strong> Alexis Carra, Ginger Gonzaga</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">Scrubs</span><span class="season-info">(Pilot + 2 Episodes)</span></div>
+            <div class="entry-right"><span class="role-label">Dept Head Hair - ABC Studios / Doozer</span><span class="details-line"><strong>Director</strong> Adam Bernstein &bull; <strong>Cast</strong> Zach Braff, Sarah Chalke</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">Felicity</span><span class="season-info">(Series, Seasons 1 & 2)</span></div>
+            <div class="entry-right"><span class="role-label">Dept Head Hair - Imagine Television</span><span class="details-line"><strong>Creators</strong> J.J. Abrams & Matt Reeves &bull; <strong>Cast</strong> Keri Russell, Scott Speedman</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">Profiler</span><span class="season-info">(Series, Seasons 1 & 2)</span></div>
+            <div class="entry-right"><span class="role-label">Dept Head Hair - NBC Studios</span><span class="details-line"><strong>Creator</strong> Cynthia Saunders &bull; <strong>Cast</strong> Julian McMahon, Robert Davi</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">Amazing Grace</span><span class="season-info">(Series, Season 1)</span></div>
+            <div class="entry-right"><span class="role-label">Dept Head Hair - NBC Productions</span><span class="details-line"><strong>Director</strong> Various &bull; <strong>Cast</strong> Patty Duke, Lorraine Toussaint, Burt Reynolds</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">Grace Under Fire</span><span class="season-info">(Sitcom, Season 1)</span></div>
+            <div class="entry-right"><span class="role-label">Key Hairstylist - Carsey-Werner Company</span><span class="details-line"><strong>Creator</strong> Chuck Lorre &bull; <strong>Cast</strong> Julie White, Tom Everett Scott</span></div>
+        </div>
+
+        <div class="category">Features & TV Movies</div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">I Still Know What You Did Last Summer</span><span class="season-info">(Feature)</span></div>
+            <div class="entry-right"><span class="role-label">Key Hairstylist - Mandalay Entertainment</span><span class="details-line"><strong>Director</strong> Danny Cannon &bull; <strong>Cast</strong> Jennifer Esposito, Jack Black</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">One Night Stand</span><span class="season-info">(Feature)</span></div>
+            <div class="entry-right"><span class="role-label">Dept Head Hair - New Line Cinema</span><span class="details-line"><strong>Director</strong> Mike Figgis &bull; <strong>Cast</strong> Ming-Na Wen, Robert Downey Jr.</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">The Last Time I Committed Suicide</span><span class="season-info">(Feature)</span></div>
+            <div class="entry-right"><span class="role-label">Dept Head Hair - Bate Entertainment</span><span class="details-line"><strong>Director</strong> Stephen Kay &bull; <strong>Cast</strong> Keanu Reeves, Adrien Brody</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">Don’t Look Back</span><span class="season-info">(TV Movie)</span></div>
+            <div class="entry-right"><span class="role-label">Dept Head Hair - HBO</span><span class="details-line"><strong>Director</strong> Geoff Murphy &bull; <strong>Cast</strong> Billy Bob Thornton, Eric Stoltz</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">3 Ninjas Knuckle Up</span><span class="season-info">(Feature)</span></div>
+            <div class="entry-right"><span class="role-label">Dept Head Hair - TriStar / Columbia</span><span class="details-line"><strong>Director</strong> Shin Sang-ok &bull; <strong>Cast</strong> Victor Wong, Charles Napier</span></div>
+        </div>
+
+        <div class="credit-entry">
+            <div class="entry-left"><span class="show-title">3 Ninjas Kick Back</span><span class="season-info">(Feature)</span></div>
+            <div class="entry-right"><span class="role-label">Dept Head Hair - TriStar Pictures</span><span class="details-line"><strong>Director</strong> Charles T. Kanganis &bull; <strong>Cast</strong> Victor Wong, Max Elliott</span></div>
         </div>
 
         <div class="category">Experience & Board Membership</div>
