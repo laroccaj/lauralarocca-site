@@ -122,23 +122,8 @@
             <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-top: 10px; color: #666;">Production Gallery</p>
         </header>
 
-        <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox('assets/images/lance.jpg')"><img src="assets/images/lance.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/iain-annie.jpg')"><img src="assets/images/iain-annie.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/wig.jpg')"><img src="assets/images/wig.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/jason.jpg')"><img src="assets/images/jason.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/david.jpg')"><img src="assets/images/david.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/annie.jpg')"><img src="assets/images/annie.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/lance-lion.jpg')"><img src="assets/images/lance-lion.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/cop1.jpg')"><img src="assets/images/cop1.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/champions-family.jpg')"><img src="assets/images/champions-family.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/mindy-couch.jpg')"><img src="assets/images/mindy-couch.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/mindy-emmymag.jpg')"><img src="assets/images/mindy-emmymag.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/mindy-event.jpg')"><img src="assets/images/mindy-event.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/mindy-omag.jpg')"><img src="assets/images/mindy-omag.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/nicole-byer.jpg')"><img src="assets/images/nicole-byer.jpg" alt="Gallery Image"></div>
-            <div class="gallery-item" onclick="openLightbox('assets/images/reese.jpg')"><img src="assets/images/reese.jpg" alt="Gallery Image"></div>
-        </div>
+        <div class="gallery-grid" id="photo-gallery">
+            </div>
     </div>
 
     <div id="lightbox" onclick="closeLightbox()">
@@ -146,27 +131,57 @@
         <img id="lightbox-img" src="">
     </div>
 
-<footer>
-    <div style="margin-bottom: 10px;">
-        <a href="mailto:laura@laroccaskincare.com" style="color: #999; text-decoration: none;">laura@laroccaskincare.com</a> 
-        &nbsp;&bull;&nbsp; 
-        <a href="tel:8186920103" style="color: #999; text-decoration: none;">818-692-0103</a>
-        &nbsp;&bull;&nbsp; 
-        <a href="https://www.imdb.com/name/nm0217934/" target="_blank" style="color: #999; text-decoration: none;">IMDb</a>
-    </div>
-    <div>
-        &copy; 2026 LAURA LAROCCA &nbsp;&bull;&nbsp; IATSE LOCAL 706
-    </div>
-</footer>
+    <footer>
+        <div style="margin-bottom: 10px;">
+            <a href="mailto:laura@laroccaskincare.com" style="color: #999; text-decoration: none;">laura@laroccaskincare.com</a> 
+            &nbsp;&bull;&nbsp; 
+            <a href="tel:8186920103" style="color: #999; text-decoration: none;">818-692-0103</a>
+            &nbsp;&bull;&nbsp; 
+            <a href="https://www.imdb.com/name/nm0217934/" target="_blank" style="color: #999; text-decoration: none;">IMDb</a>
+        </div>
+        <div>
+            &copy; 2026 LAURA LAROCCA &nbsp;&bull;&nbsp; IATSE LOCAL 706
+        </div>
+    </footer>
 
     <script>
+        // Load Gallery from JSON
+        async function loadGallery() {
+            try {
+                const response = await fetch('photos.json');
+                const photos = await response.json();
+                const galleryContainer = document.getElementById('photo-gallery');
+
+                photos.forEach(photo => {
+                    const item = document.createElement('div');
+                    item.className = 'gallery-item';
+                    item.onclick = () => openLightbox(photo.src);
+
+                    const img = document.createElement('img');
+                    img.src = photo.src;
+                    img.alt = photo.alt || "Gallery Image";
+                    img.loading = "lazy"; // Optimizes performance for many photos
+
+                    item.appendChild(img);
+                    galleryContainer.appendChild(item);
+                });
+            } catch (error) {
+                console.error("Error loading the photo gallery:", error);
+            }
+        }
+
+        // Lightbox Control
         function openLightbox(src) {
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox').style.display = 'flex';
         }
+
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
         }
+
+        // Initialize the gallery
+        loadGallery();
     </script>
 
 </body>
