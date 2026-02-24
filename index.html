@@ -15,67 +15,89 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); line-height: 1.4; }
 
-        /* Top Contact Bar - Identical to Credits */
+        /* Top Contact Bar */
         .contact-bar { background: var(--black); color: var(--white); padding: 10px 5%; display: flex; justify-content: flex-end; gap: 25px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
         .contact-bar a { color: var(--white); text-decoration: none; transition: 0.3s; }
         .contact-bar a:hover { color: var(--accent); }
 
-        /* Navigation - Left Aligned Links */
-        nav { padding: 20px 5%; display: flex; gap: 30px; background: white; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
+        /* Navigation */
+        nav { padding: 15px 5%; display: flex; gap: 30px; background: white; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
         nav a { text-decoration: none; color: var(--black); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
         nav a:hover, nav a.active { color: var(--accent); }
 
-        /* Hero Section - Tightened spacing */
-        .hero-wrapper { max-width: 1200px; margin: 0 auto; padding: 50px 5% 40px; }
+        /* Hero Wrapper - Tight & Centered */
+        .hero-wrapper { max-width: 1100px; margin: 0 auto; padding: 40px 5%; }
         
         .hero { 
             display: flex; 
-            align-items: flex-start; 
-            justify-content: space-between;
-            gap: 60px; 
+            align-items: center; 
+            gap: 50px; /* Tight gap between photo and text */
         }
         
+        .hero-image { flex: 0.8; }
         .hero-content { flex: 1.2; }
-        .hero-image { flex: 0.8; display: flex; justify-content: flex-end; }
         
         .hero-image img { 
             width: 100%; 
             max-width: 400px; 
             height: auto;
             border-radius: 2px;
-            box-shadow: 15px 15px 0px var(--stone);
             display: block;
         }
 
-        /* Typography Adjustments */
-        h1 { font-family: 'Oswald', sans-serif; font-size: 4rem; text-transform: uppercase; line-height: 1; margin-bottom: 5px; }
-        .job-title { font-family: 'Inter', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; color: var(--black); font-weight: 700; display: block; margin-bottom: 10px; }
-        .union-tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); font-weight: 600; display: block; margin-bottom: 20px; }
+        /* Typography */
+        .union-tag { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); font-weight: 700; margin-bottom: 5px; display: block; }
         
-        .hero-text { font-size: 1rem; color: #444; margin-bottom: 30px; max-width: 500px; line-height: 1.6; }
+        h1 { 
+            font-family: 'Oswald', sans-serif; 
+            font-size: clamp(3rem, 6vw, 5.5rem); 
+            text-transform: uppercase; 
+            line-height: 0.85; 
+            margin-bottom: 10px; 
+            letter-spacing: -1px;
+        }
+        
+        .job-title { 
+            font-family: 'Inter', sans-serif; 
+            font-size: 0.9rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            color: var(--black); 
+            font-weight: 700; 
+            display: block; 
+            margin-bottom: 20px; 
+        }
+        
+        .hero-text { 
+            font-size: 1rem; 
+            color: #444; 
+            margin-bottom: 25px; 
+            max-width: 520px; 
+            line-height: 1.5; 
+        }
 
         /* Buttons */
         .btn-group { display: flex; gap: 15px; }
-        .btn { padding: 12px 28px; text-decoration: none; font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s; }
+        .btn { padding: 12px 30px; text-decoration: none; font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s; text-align: center; }
         .btn-primary { background: var(--black); color: var(--white); border: 1px solid var(--black); }
         .btn-outline { border: 1px solid var(--black); color: var(--black); }
         .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
 
         /* Stats Bar */
         .stats-wrapper { background: var(--stone); border-top: 1px solid #eee; }
-        .stats { max-width: 1200px; margin: 0 auto; padding: 40px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+        .stats { max-width: 1100px; margin: 0 auto; padding: 40px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; text-align: center; }
         .stat-item h3 { font-family: 'Oswald', sans-serif; font-size: 2rem; color: var(--accent); margin-bottom: 2px; }
-        .stat-item p { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1.5px; font-weight: 700; color: #666; }
+        .stat-item p { text-transform: uppercase; font-size: 0.65rem; letter-spacing: 1px; font-weight: 700; color: #666; }
 
         footer { text-align: center; padding: 40px 5%; font-size: 0.7rem; letter-spacing: 2px; color: #999; text-transform: uppercase; }
 
-        /* Mobile */
+        /* Mobile Adjustments */
         @media (max-width: 850px) {
-            .hero { flex-direction: column-reverse; text-align: center; gap: 40px; }
-            .hero-text { margin: 0 auto 30px; }
+            .hero { flex-direction: column; text-align: center; gap: 30px; }
+            .hero-text { margin: 0 auto 25px; }
             .btn-group { justify-content: center; }
-            .hero-image { justify-content: center; }
-            h1 { font-size: 3rem; }
+            .hero-image img { max-width: 320px; margin: 0 auto; }
+            h1 { font-size: 3.5rem; }
         }
     </style>
 </head>
@@ -94,10 +116,14 @@
 
     <div class="hero-wrapper">
         <section class="hero">
+            <div class="hero-image">
+                <img src="assets/images/laura-portrait.jpg" alt="Laura LaRocca">
+            </div>
+            
             <div class="hero-content">
-                <h1>Laura LaRocca</h1>
-                <span class="job-title">Hairstylist &bull; Hair Department Head</span>
                 <span class="union-tag">IATSE Local 706 Journeyman</span>
+                <h1>Laura<br>LaRocca</h1>
+                <span class="job-title">Hairstylist &bull; Hair Department Head</span>
                 
                 <p class="hero-text">
                     With over 25 years of experience in high-level Film and Television production, Laura specializes in character design, period styling, and department management for major network series and features.
@@ -107,10 +133,6 @@
                     <a href="credits.html" class="btn btn-primary">View Credits</a>
                     <a href="photos.html" class="btn btn-outline">Gallery</a>
                 </div>
-            </div>
-            
-            <div class="hero-image">
-                <img src="assets/images/laura-portrait.jpg" alt="Laura LaRocca">
             </div>
         </section>
     </div>
