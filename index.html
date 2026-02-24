@@ -15,62 +15,79 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
 
+        /* Top Contact Bar - Matches Credits Page */
+        .contact-bar { background: var(--black); color: var(--white); padding: 10px 5%; display: flex; justify-content: flex-end; gap: 25px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+        .contact-bar a { color: var(--white); text-decoration: none; transition: 0.3s; }
+        .contact-bar a:hover { color: var(--accent); }
+
         /* Navigation */
         nav { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: white; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
         .logo { font-family: 'Oswald', sans-serif; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; color: var(--black); font-weight: 700; }
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a { text-decoration: none; color: var(--black); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { text-decoration: none; color: var(--black); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links a:hover { color: var(--accent); }
 
-        /* Balanced Hero Section */
+        /* Hero Section Container */
+        .hero-wrapper { max-width: 1200px; margin: 0 auto; padding: 80px 5%; }
+        
         .hero { 
-            max-width: 1100px; 
-            margin: 0 auto; 
             display: flex; 
             align-items: center; 
-            padding: 80px 5%; 
-            gap: 60px; 
+            justify-content: space-between;
+            gap: 80px; 
         }
         
-        .hero-content { flex: 1.2; }
-        .hero-image { flex: 0.8; display: flex; justify-content: center; }
+        .hero-content { flex: 1; }
+        .hero-image { flex: 1; display: flex; justify-content: flex-end; }
         
         .hero-image img { 
             width: 100%; 
-            max-width: 380px; /* Scaled down for balance */
+            max-width: 420px; 
             height: auto;
             border-radius: 2px;
-            box-shadow: 15px 15px 0px var(--stone);
+            box-shadow: 20px 20px 0px var(--stone);
             display: block;
         }
 
         .hero-subtitle { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); font-weight: 600; margin-bottom: 10px; display: block; }
-        h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); text-transform: uppercase; line-height: 1; margin-bottom: 20px; }
-        .hero-text { font-size: 0.95rem; color: #555; margin-bottom: 30px; max-width: 450px; }
+        h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.5rem, 5vw, 4.2rem); text-transform: uppercase; line-height: 1; margin-bottom: 25px; }
+        .hero-text { font-size: 1rem; color: #555; margin-bottom: 35px; max-width: 480px; }
 
         /* Buttons */
         .btn-group { display: flex; gap: 15px; }
-        .btn { padding: 12px 25px; text-decoration: none; font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s; }
+        .btn { padding: 14px 30px; text-decoration: none; font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s; text-align: center; }
         .btn-primary { background: var(--black); color: var(--white); border: 1px solid var(--black); }
         .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
         .btn-outline { border: 1px solid var(--black); color: var(--black); }
         .btn-outline:hover { background: var(--black); color: var(--white); }
 
-        /* Stats Bar */
-        .stats { background: var(--stone); padding: 50px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 30px; text-align: center; border-top: 1px solid #eee; }
-        .stat-item h3 { font-family: 'Oswald', sans-serif; font-size: 2rem; color: var(--accent); margin-bottom: 5px; }
-        .stat-item p { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; font-weight: 700; color: #666; }
+        /* Stats Section */
+        .stats-wrapper { background: var(--stone); border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+        .stats { max-width: 1200px; margin: 0 auto; padding: 60px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
+        .stat-item h3 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; color: var(--accent); margin-bottom: 5px; }
+        .stat-item p { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700; color: #666; }
 
-        /* Mobile Adjustments */
-        @media (max-width: 850px) {
-            .hero { flex-direction: column-reverse; text-align: center; padding: 40px 5%; gap: 40px; }
-            .hero-text { margin: 0 auto 30px; }
+        /* Footer */
+        footer { text-align: center; padding: 60px 5%; font-size: 0.7rem; letter-spacing: 2px; color: #999; text-transform: uppercase; }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero { flex-direction: column-reverse; text-align: center; gap: 50px; }
+            .hero-wrapper { padding: 40px 5% 60px; }
+            .hero-text { margin: 0 auto 35px; }
             .btn-group { justify-content: center; }
-            .hero-image img { max-width: 280px; box-shadow: 10px 10px 0px var(--stone); }
-            h1 { font-size: 2.8rem; }
+            .hero-image { justify-content: center; }
+            .hero-image img { max-width: 320px; box-shadow: 15px 15px 0px var(--stone); }
+            h1 { font-size: 3rem; }
         }
     </style>
 </head>
 <body>
+
+    <div class="contact-bar">
+        <a href="mailto:laura@laroccaskincare.com">laura@laroccaskincare.com</a>
+        <a href="tel:8186920103">818-692-0103</a>
+    </div>
 
     <nav>
         <a href="index.html" class="logo">Laura LaRocca</a>
@@ -81,41 +98,49 @@
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <span class="hero-subtitle">IATSE Local 706 Journeyman</span>
-            <h1>Hair Department Head</h1>
-            <p class="hero-text">
-                With over 25 years of experience in high-level Film and Television production, Laura LaRocca specializes in character design, period styling, and department management for major network series and features.
-            </p>
-            <div class="btn-group">
-                <a href="credits.html" class="btn btn-primary">View Credits</a>
-                <a href="photos.html" class="btn btn-outline">Gallery</a>
+    <div class="hero-wrapper">
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-subtitle">IATSE Local 706 Journeyman</span>
+                <h1>Hair Department Head</h1>
+                <p class="hero-text">
+                    With over 25 years of experience in high-level Film and Television production, Laura LaRocca specializes in character design, period styling, and department management for major network series and features.
+                </p>
+                <div class="btn-group">
+                    <a href="credits.html" class="btn btn-primary">View Credits</a>
+                    <a href="photos.html" class="btn btn-outline">Gallery</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="assets/images/laura-portrait.jpg" alt="Laura LaRocca Portrait">
-        </div>
-    </section>
+            <div class="hero-image">
+                <img src="assets/images/laura-portrait.jpg" alt="Laura LaRocca Portrait">
+            </div>
+        </section>
+    </div>
 
-    <section class="stats">
-        <div class="stat-item">
-            <h3>25+</h3>
-            <p>Years Experience</p>
-        </div>
-        <div class="stat-item">
-            <h3>Local 706</h3>
-            <p>Board of Trustees</p>
-        </div>
-        <div class="stat-item">
-            <h3>150+</h3>
-            <p>Episodes of Young Sheldon</p>
-        </div>
-        <div class="stat-item">
-            <h3>Expertise</h3>
-            <p>Character Design</p>
-        </div>
-    </section>
+    <div class="stats-wrapper">
+        <section class="stats">
+            <div class="stat-item">
+                <h3>25+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>Local 706</h3>
+                <p>Board of Trustees</p>
+            </div>
+            <div class="stat-item">
+                <h3>150+</h3>
+                <p>Episodes of Young Sheldon</p>
+            </div>
+            <div class="stat-item">
+                <h3>Expertise</h3>
+                <p>Character Design</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 LAURA LAROCCA &nbsp;&bull;&nbsp; IATSE LOCAL 706
+    </footer>
 
 </body>
 </html>
