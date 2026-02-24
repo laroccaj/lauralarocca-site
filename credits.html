@@ -4,6 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full Credits | Laura LaRocca</title>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Laura LaRocca",
+      "jobTitle": "Hairstylist",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "IATSE Local 706"
+      },
+      "url": "https://lauralarocca.com",
+      "sameAs": [
+        "https://www.imdb.com/name/nm0217934/",
+        "https://www.instagram.com/lauralarocca_la/",
+        "https://www.laroccaskincare.com",
+        "https://georgelopezfoundation.org/news/2023/12/28/807esqcgz2av7b76jr5u821tu0qf72"
+      ],
+      "knowsAbout": ["Hairstyling", "Film Production", "Television Production", "Skincare"],
+      "mainEntityOfPage": "https://lauralarocca.com/credits.html"
+    }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --black: #111; --white: #fff; --accent: #9a8459; }
@@ -34,17 +57,19 @@
         .role-label { font-weight: 700; font-size: 0.75rem; text-transform: uppercase; color: var(--black); display: block; margin-bottom: 2px; }
         .details-line { font-size: 0.75rem; line-height: 1.4; display: block; }
         
-        /* Darkened labels for better print contrast */
         .details-line strong { font-size: 0.65rem; text-transform: uppercase; color: #666; margin-right: 4px; }
 
         .experience-list { list-style: none; margin-top: 10px; }
         .experience-list li { font-size: 0.85rem; margin-bottom: 5px; padding-left: 15px; position: relative; }
         .experience-list li::before { content: "•"; color: var(--accent); position: absolute; left: 0; font-weight: bold; }
 
+        .legacy-press { margin-top: 40px; padding: 20px; background: #f9f9f9; border-left: 4px solid var(--accent); font-size: 0.8rem; line-height: 1.5; }
+        .legacy-press a { color: var(--black); font-weight: 600; text-decoration: underline; }
+
         footer { text-align: center; padding: 40px; font-size: 0.7rem; color: #999; text-transform: uppercase; border-top: 1px solid #eee; margin-top: 40px; }
 
         @media print {
-            nav, .contact-bar, .download-btn { display: none !important; }
+            nav, .contact-bar, .download-btn, .legacy-press { display: none !important; }
             nav { position: static; } 
             @page { margin: 1.2cm; }
             .container { padding: 0 !important; width: 100%; max-width: none; }
@@ -89,6 +114,10 @@
             <li>George Lopez Foundation: Board Member 2015-2025</li>
             <li>National Kidney Foundation of California: Board Member 2011-2015</li>
         </ul>
+
+        <div class="legacy-press">
+            <strong>Legacy Spotlight:</strong> Laura famously oversaw the iconic styling for <em>Felicity</em> (Seasons 1 & 2), creating a cultural touchstone in television history that continues to be featured in publications like <a href="https://collider.com/keri-russell-felicity-haircut-controversy/" target="_blank">Collider</a>.
+        </div>
     </div>
 
     <footer>
@@ -96,7 +125,6 @@
     </footer>
 
     <script>
-        // Fetch data from credits.json in the same directory
         fetch('credits.json')
             .then(response => {
                 if (!response.ok) throw new Error("Could not load credits.json");
@@ -106,7 +134,6 @@
                 const target = document.getElementById('credits-injector');
                 let output = '';
 
-                // Map JSON keys to visible Heading labels
                 const sections = [
                     { key: 'tv_series', label: 'TV Series' },
                     { key: 'features', label: 'Features & TV Movies' }
