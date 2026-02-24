@@ -34,9 +34,24 @@
         h1 { font-family: 'Oswald', sans-serif; font-size: 3rem; text-transform: uppercase; margin-bottom: 5px; line-height: 1; }
         .subtitle { text-transform: uppercase; letter-spacing: 3px; color: var(--accent); font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 10px; }
 
+        .download-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .download-btn:hover { background-color: var(--black); }
+
         .category { margin-top: 40px; font-family: 'Oswald', sans-serif; font-size: 1.6rem; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid #eee; padding-bottom: 8px; }
         
-        /* Tightened Entry Styling */
         .credit-entry { 
             margin: 15px 0; 
             display: grid; 
@@ -52,6 +67,18 @@
         .details strong { font-size: 0.65rem; text-transform: uppercase; color: #999; display: block; margin-top: 5px; }
         
         footer { text-align: center; padding: 60px; font-size: 0.7rem; letter-spacing: 2px; color: #999; text-transform: uppercase; border-top: 1px solid #eee; }
+
+        /* --- PDF / PRINT STYLING --- */
+        @media print {
+            nav, .contact-bar, .download-btn { display: none !important; }
+            .container { padding: 0; max-width: 100%; }
+            body { font-size: 11pt; background: white; }
+            header { margin-bottom: 20px; }
+            .category { margin-top: 30px; }
+            .credit-entry { page-break-inside: avoid; border-bottom: 1px solid #ddd; }
+            footer { padding: 20px; border-top: 1px solid #eee; }
+            @page { margin: 1.5cm; }
+        }
 
         @media (max-width: 700px) { 
             .credit-entry { grid-template-columns: 1fr; gap: 5px; padding-bottom: 10px; } 
@@ -78,6 +105,7 @@
             <span class="subtitle">Hair Department Head / Hairstylist</span>
             <h1>Laura LaRocca</h1>
             <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-top: 10px; color: #666;">Complete Credits List</p>
+            <button onclick="window.print()" class="download-btn">Download / Print PDF Resume</button>
         </header>
 
         <div class="category">TV Series</div>
@@ -88,8 +116,8 @@
         </div>
 
         <div class="credit-entry">
-            <div><span class="role">Hairstylist</span><span class="show-title">Presumed Innocent</span>Warner Brothers Television (Series, Seasons 2)</div>
-            <div class="details"><strong>Creator</strong>David E. Kelley<strong> </strong> </div>
+            <div><span class="role">Hairstylist</span><span class="show-title">Presumed Innocent</span>Warner Brothers Television (Series, Season 2)</div>
+            <div class="details"><strong>Creator</strong>David E. Kelley</div>
         </div>
         
         <div class="credit-entry">
@@ -203,14 +231,7 @@
 
 <footer>
     <div style="margin-bottom: 10px;">
-        <a href="mailto:laura@laroccaskincare.com" style="color: #999; text-decoration: none;">laura@laroccaskincare.com</a> 
-        &nbsp;&bull;&nbsp; 
-        <a href="tel:8186920103" style="color: #999; text-decoration: none;">818-692-0103</a>
-        &nbsp;&bull;&nbsp; 
-        <a href="https://www.imdb.com/name/nm0217934/" target="_blank" style="color: #999; text-decoration: none;">IMDb</a>
-    </div>
-    <div>
-        &copy; 2026 LAURA LAROCCA &nbsp;&bull;&nbsp; IATSE LOCAL 706
+        laura@laroccaskincare.com &nbsp;&bull;&nbsp; 818-692-0103 &nbsp;&bull;&nbsp; IATSE LOCAL 706 &nbsp;&bull;&nbsp; 2026
     </div>
 </footer>
 
