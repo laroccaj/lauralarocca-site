@@ -5,66 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laura LaRocca | Hair Department Head | IATSE Local 706</title>
     
-    <meta name="description" content="Official portfolio of Laura LaRocca, IATSE Local 706 Hair Department Head. Credits include Young Sheldon, The Mindy Project, and Champions.">
-    <meta property="og:title" content="Laura LaRocca | Hair Department Head">
-    <meta property="og:description" content="Department Head for Film & Television. 25+ years experience.">
-    <meta property="og:image" content="assets/images/young-sheldon-photo-shoot.jpg">
-    <meta property="og:url" content="https://lauralarocca.com">
-
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        :root { --black: #111; --white: #fff; --accent: #9a8459; --stone: #f4f4f4; }
+        :root { --black: #111; --white: #fff; --accent: #9a8459; --stone: #f8f8f8; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
 
         /* Navigation */
-        nav { padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; background: white; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
-        .logo { font-family: 'Oswald', sans-serif; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; color: var(--black); }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { text-decoration: none; color: var(--black); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
+        nav { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: white; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-family: 'Oswald', sans-serif; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; color: var(--black); font-weight: 700; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--black); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Hero Section */
-        .hero { display: flex; min-height: 85vh; align-items: center; padding: 0 5%; gap: 5%; background: var(--white); }
-        .hero-content { flex: 1; }
-        .hero-image { flex: 1; text-align: right; }
-        .hero-image img { width: 100%; max-width: 500px; border-radius: 2px; filter: grayscale(10%); box-shadow: 20px 20px 0px var(--stone); }
+        /* Balanced Hero Section */
+        .hero { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            align-items: center; 
+            padding: 80px 5%; 
+            gap: 60px; 
+        }
+        
+        .hero-content { flex: 1.2; }
+        .hero-image { flex: 0.8; display: flex; justify-content: center; }
+        
+        .hero-image img { 
+            width: 100%; 
+            max-width: 380px; /* Scaled down for balance */
+            height: auto;
+            border-radius: 2px;
+            box-shadow: 15px 15px 0px var(--stone);
+            display: block;
+        }
 
-        h1 { font-family: 'Oswald', sans-serif; font-size: clamp(3rem, 8vw, 5rem); text-transform: uppercase; line-height: 0.9; margin-bottom: 20px; }
-        .hero-subtitle { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); font-weight: 600; margin-bottom: 15px; display: block; }
-        .hero-text { font-size: 1.1rem; color: #555; max-width: 500px; margin-bottom: 35px; }
+        .hero-subtitle { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); font-weight: 600; margin-bottom: 10px; display: block; }
+        h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); text-transform: uppercase; line-height: 1; margin-bottom: 20px; }
+        .hero-text { font-size: 0.95rem; color: #555; margin-bottom: 30px; max-width: 450px; }
 
         /* Buttons */
-        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
-        .btn { padding: 15px 35px; text-decoration: none; font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; transition: 0.3s; display: inline-block; }
-        .btn-primary { background: var(--black); color: var(--white); }
-        .btn-primary:hover { background: var(--accent); }
-        .btn-outline { border: 2px solid var(--black); color: var(--black); }
+        .btn-group { display: flex; gap: 15px; }
+        .btn { padding: 12px 25px; text-decoration: none; font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s; }
+        .btn-primary { background: var(--black); color: var(--white); border: 1px solid var(--black); }
+        .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+        .btn-outline { border: 1px solid var(--black); color: var(--black); }
         .btn-outline:hover { background: var(--black); color: var(--white); }
 
-        /* Stats Section */
-        .stats { background: var(--stone); padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
-        .stat-item h3 { font-family: 'Oswald', sans-serif; font-size: 2.5rem; color: var(--accent); }
-        .stat-item p { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700; }
+        /* Stats Bar */
+        .stats { background: var(--stone); padding: 50px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 30px; text-align: center; border-top: 1px solid #eee; }
+        .stat-item h3 { font-family: 'Oswald', sans-serif; font-size: 2rem; color: var(--accent); margin-bottom: 5px; }
+        .stat-item p { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; font-weight: 700; color: #666; }
 
-        /* Footer */
-        footer { padding: 60px 5%; background: var(--black); color: var(--white); text-align: center; }
-        .footer-links { margin-bottom: 30px; display: flex; justify-content: center; gap: 30px; }
-        .footer-links a { color: var(--white); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; opacity: 0.6; transition: 0.3s; }
-        .footer-links a:hover { opacity: 1; color: var(--accent); }
-        .copyright { font-size: 0.7rem; opacity: 0.4; text-transform: uppercase; letter-spacing: 2px; }
-
-        @media (max-width: 968px) {
-            .hero { flex-direction: column-reverse; padding: 60px 5%; text-align: center; }
-            .hero-image { margin-bottom: 40px; }
-            .hero-image img { max-width: 300px; }
-            .hero-text { margin: 0 auto 35px; }
+        /* Mobile Adjustments */
+        @media (max-width: 850px) {
+            .hero { flex-direction: column-reverse; text-align: center; padding: 40px 5%; gap: 40px; }
+            .hero-text { margin: 0 auto 30px; }
             .btn-group { justify-content: center; }
-            h1 { font-size: 3.5rem; }
+            .hero-image img { max-width: 280px; box-shadow: 10px 10px 0px var(--stone); }
+            h1 { font-size: 2.8rem; }
         }
     </style>
 </head>
@@ -87,12 +89,12 @@
                 With over 25 years of experience in high-level Film and Television production, Laura LaRocca specializes in character design, period styling, and department management for major network series and features.
             </p>
             <div class="btn-group">
-                <a href="credits.html" class="btn btn-primary">View Full Credits</a>
-                <a href="photos.html" class="btn btn-outline">Production Gallery</a>
+                <a href="credits.html" class="btn btn-primary">View Credits</a>
+                <a href="photos.html" class="btn btn-outline">Gallery</a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="assets/images/laura-portrait.jpg" alt="Laura LaRocca - Hair Department Head">
+            <img src="assets/images/laura-portrait.jpg" alt="Laura LaRocca Portrait">
         </div>
     </section>
 
@@ -111,21 +113,9 @@
         </div>
         <div class="stat-item">
             <h3>Expertise</h3>
-            <p>Wig Work & Character Design</p>
+            <p>Character Design</p>
         </div>
     </section>
-
-    <footer>
-        <div class="footer-links">
-            <a href="mailto:laura@laroccaskincare.com">Email</a>
-            <a href="tel:8186920103">818-692-0103</a>
-            <a href="https://www.imdb.com/name/nm0217934/" target="_blank">IMDb</a>
-            <a href="https://www.laroccaskincare.com" target="_blank">Skincare</a>
-        </div>
-        <p class="copyright">
-            &copy; 2026 Laura LaRocca &bull; Member IATSE Local 706 &bull; All Rights Reserved
-        </p>
-    </footer>
 
 </body>
 </html>
