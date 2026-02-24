@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credits | Laura LaRocca</title>
+    <title>Full Credits | Laura LaRocca</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --black: #111; --white: #fff; --accent: #9a8459; --stone: #f8f8f8; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); line-height: 1.4; } /* Tightened line height */
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); line-height: 1.4; }
         
         .contact-bar {
             background: var(--black);
@@ -24,40 +24,39 @@
         .contact-bar a { color: var(--white); text-decoration: none; transition: 0.3s; }
         .contact-bar a:hover { color: var(--accent); }
 
-        nav { padding: 20px 5%; display: flex; gap: 30px; background: var(--white); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #eee; }
+        nav { padding: 20px 5%; display: flex; gap: 30px; border-bottom: 1px solid #eee; position: sticky; top:0; background: white; z-index: 10;}
         nav a { text-decoration: none; color: var(--black); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
-        nav a:hover, nav a.active { color: var(--accent); }
+        nav a:hover { color: var(--accent); }
 
-        .container { padding: 40px 5%; max-width: 1000px; margin: 0 auto; }
+        .container { padding: 40px 5%; max-width: 1100px; margin: 0 auto; }
         
         header { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
         h1 { font-family: 'Oswald', sans-serif; font-size: 3rem; text-transform: uppercase; margin-bottom: 5px; line-height: 1; }
         .subtitle { text-transform: uppercase; letter-spacing: 3px; color: var(--accent); font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 10px; }
 
-        /* --- CREDITS STYLING --- */
-        .credits-section { margin-top: 20px; }
+        .category { margin-top: 40px; font-family: 'Oswald', sans-serif; font-size: 1.6rem; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid #eee; padding-bottom: 8px; }
         
-        .credit-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 6px 0; /* Reduced from default padding */
-            border-bottom: 1px solid #f1f1f1;
-            margin-bottom: 4px; /* Tightened space between rows */
+        /* Tightened Entry Styling */
+        .credit-entry { 
+            margin: 15px 0; 
+            display: grid; 
+            grid-template-columns: 1fr 1.2fr; 
+            gap: 20px; 
+            padding-bottom: 15px; 
+            border-bottom: 1px solid #f0f0f0; 
         }
+        
+        .show-title { font-family: 'Oswald', sans-serif; font-size: 1.2rem; text-transform: uppercase; display: block; line-height: 1.2; }
+        .role { font-weight: 700; font-size: 0.7rem; text-transform: uppercase; color: #777; margin-bottom: 3px; display: block;}
+        .details { font-size: 0.85rem; color: #444; }
+        .details strong { font-size: 0.65rem; text-transform: uppercase; color: #999; display: block; margin-top: 5px; }
+        
+        footer { text-align: center; padding: 60px; font-size: 0.7rem; letter-spacing: 2px; color: #999; text-transform: uppercase; border-top: 1px solid #eee; }
 
-        .credit-item:last-child { border-bottom: none; }
-
-        .project-title { font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; flex: 1; }
-        .role { color: var(--accent); font-size: 0.8rem; text-transform: uppercase; font-weight: 500; margin-left: 20px; text-align: right; }
-        .director { font-size: 0.8rem; color: #666; margin-top: -2px; }
-
-        footer { text-align: center; padding: 40px; font-size: 0.7rem; letter-spacing: 2px; color: #999; text-transform: uppercase; border-top: 1px solid #eee; margin-top: 40px; }
-
-        @media (max-width: 768px) {
+        @media (max-width: 700px) { 
+            .credit-entry { grid-template-columns: 1fr; gap: 5px; padding-bottom: 10px; } 
             h1 { font-size: 2.2rem; }
-            .credit-item { flex-direction: column; gap: 2px; }
-            .role { text-align: left; margin-left: 0; font-size: 0.75rem; }
+            .contact-bar { justify-content: center; flex-direction: column; text-align: center; gap: 5px; }
         }
     </style>
 </head>
@@ -70,56 +69,145 @@
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="credits.html" class="active">Full Credits</a>
+        <a href="credits.html" style="color:var(--accent);">Full Credits</a>
         <a href="photos.html">Photos</a>
     </nav>
 
     <div class="container">
         <header>
-            <span class="subtitle">Selected Film & Television</span>
-            <h1>Credits</h1>
+            <span class="subtitle">Hair Department Head / Hairstylist</span>
+            <h1>Laura LaRocca</h1>
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-top: 10px; color: #666;">Complete Credits List</p>
         </header>
 
-        <div class="credits-section">
-            <div class="credit-item">
-                <div>
-                    <div class="project-title">Champions</div>
-                    <div class="director">Director: Bobby Farrelly</div>
-                </div>
-                <div class="role">Hair Department Head</div>
-            </div>
+        <div class="category">TV Series</div>
 
-            <div class="credit-item">
-                <div>
-                    <div class="project-title">The Mindy Project</div>
-                    <div class="director">Universal Television / Hulu</div>
-                </div>
-                <div class="role">Key Hair</div>
-            </div>
+        <div class="credit-entry">
+            <div><span class="role">Hairstylist</span><span class="show-title">Georgie and Mandy’s First Marriage</span>Warner Brothers Television (Sitcom, Seasons 1–2)</div>
+            <div class="details"><strong>Creator</strong>Chuck Lorre<strong>Cast</strong>Reoccurring Young Sheldon cast</div>
+        </div>
 
-            <div class="credit-item">
-                <div>
-                    <div class="project-title">Late Night</div>
-                    <div class="director">Director: Nisha Ganatra</div>
-                </div>
-                <div class="role">Hair Department Head</div>
-            </div>
-            
-            </div>
+        <div class="credit-entry">
+            <div><span class="role">Department Head Hair</span><span class="show-title">Young Sheldon</span>Warner Brothers Television (Series, Seasons 1–7)</div>
+            <div class="details"><strong>Creator</strong>Chuck Lorre<strong>Cast</strong>Zoe Perry, Lance Barber, Annie Potts</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Department Head Hair</span><span class="show-title">Everything’s Gonna Be Okay</span>Avalon Television / Freeform (Series, Season 1)</div>
+            <div class="details"><strong>Creator</strong>Josh Thomas<strong>Cast</strong>Josh Thomas, Kayla Cromer</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Key Hairstylist</span><span class="show-title">Idiotsitter</span>Comedy Central (Series, Season 1)</div>
+            <div class="details"><strong>Creators</strong>Jillian Bell, Charlotte Newhouse</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Department Head Hair</span><span class="show-title">Champions</span>Universal Entertainment (Series, Season 1)</div>
+            <div class="details"><strong>Creator</strong>Mindy Kaling<strong>Cast</strong>Fortune Feimster, Ginger Gonzaga</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Key Hairstylist</span><span class="show-title">Loosely Exactly Nicole</span>Oui Productions (Series, Season 1)</div>
+            <div class="details"><strong>Creators</strong>Christian Lander, Christine Zander<strong>Cast</strong>Nicole Byer, Jacob Wysocki</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Personal Hairstylist to Mindy Kaling</span><span class="show-title">The Mindy Project</span>Universal Entertainment (Series, Seasons 2–6)</div>
+            <div class="details"><strong>Creator</strong>Mindy Kaling<strong>Cast</strong>Mindy Kaling, Reese Witherspoon (guest)</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Key Hairstylist</span><span class="show-title">Stitchers</span>Prodco (Series, Season 1)</div>
+            <div class="details"><strong>Creator</strong>Jeffrey Alan Schechter<strong>Cast</strong>Allison Scagliotti</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Key Hairstylist</span><span class="show-title">The Fosters</span>Freeform Original Production (31 Episodes)</div>
+            <div class="details"><strong>Creators</strong>Peter Paige, Bradley Bredeweg<strong>Cast</strong>Sherri Saum, Danny Nucci, Teri Polo, Annie Potts</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Department Head Hair</span><span class="show-title">Hot Bench</span>Big Ticket Productions (100 Episodes)</div>
+            <div class="details"><strong>Creator</strong>Judge Judy Sheindlin<strong>Cast</strong>Patricia DiMango</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Key Hairstylist</span><span class="show-title">Mixology</span>ABC Signature (Series, Season 1)</div>
+            <div class="details"><strong>Creators</strong>Jon Lucas, Scott Moore<strong>Cast</strong>Alexis Carra, Ginger Gonzaga</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Department Head Hair</span><span class="show-title">Scrubs</span>ABC Studios / Doozer Productions (Pilot + Episodes)</div>
+            <div class="details"><strong>Director</strong>Adam Bernstein<strong>Cast</strong>Zach Braff, Sarah Chalke</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Department Head Hair</span><span class="show-title">Felicity</span>Imagine Television (Series, Seasons 1–2)</div>
+            <div class="details"><strong>Creators</strong>J.J. Abrams, Matt Reeves<strong>Cast</strong>Keri Russell, Scott Speedman, Scott Foley</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Department Head Hair</span><span class="show-title">Profiler</span>NBC Studios (Series, Seasons 1–2)</div>
+            <div class="details"><strong>Creator</strong>Cynthia Saunders<strong>Cast</strong>Julian McMahon, Robert Davi, Roma Maffia</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Department Head Hair</span><span class="show-title">Amazing Grace</span>NBC Productions (Series, Season 1)</div>
+            <div class="details"><strong>Director</strong>Various<strong>Cast</strong>Patty Duke, Lorraine Toussaint, Burt Reynolds</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Key Hairstylist</span><span class="show-title">Grace Under Fire</span>Carsey-Werner Company (Sitcom, Season 1)</div>
+            <div class="details"><strong>Creator</strong>Chuck Lorre<strong>Cast</strong>Julie White, Tom Everett Scott</div>
+        </div>
+
+        <div class="category">Features & TV Movies</div>
+
+        <div class="credit-entry">
+            <div><span class="role">Key Hairstylist</span><span class="show-title">I Still Know What You Did Last Summer</span>Mandalay Entertainment (Feature)</div>
+            <div class="details"><strong>Director</strong>Danny Cannon<strong>Cast</strong>Jennifer Esposito, Jack Black</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Department Head Hair</span><span class="show-title">One Night Stand</span>New Line Cinema (Feature)</div>
+            <div class="details"><strong>Director</strong>Mike Figgis<strong>Cast</strong>Ming-Na Wen, Robert Downey Jr., Nastassja Kinski</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Department Head Hair</span><span class="show-title">The Last Time I Committed Suicide</span>Bate Entertainment (Feature)</div>
+            <div class="details"><strong>Director</strong>Stephen Kay<strong>Cast</strong>Keanu Reeves, Adrien Brody, Claire Forlani</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Department Head Hair</span><span class="show-title">Don’t Look Back</span>HBO (TV Movie)</div>
+            <div class="details"><strong>Director</strong>Geoff Murphy<strong>Cast</strong>Billy Bob Thornton, Eric Stoltz</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Department Head Hair</span><span class="show-title">3 Ninjas Knuckle Up</span>TriStar Pictures / Columbia Pictures (Feature)</div>
+            <div class="details"><strong>Director</strong>Shin Sang-ok<strong>Cast</strong>Victor Wong, Charles Napier</div>
+        </div>
+
+        <div class="credit-entry">
+            <div><span class="role">Department Head Hair</span><span class="show-title">3 Ninjas Kick Back</span>TriStar Pictures (Feature)</div>
+            <div class="details"><strong>Director</strong>Charles T. Kanganis<strong>Cast</strong>Victor Wong, Max Elliott</div>
+        </div>
+
     </div>
 
-    <footer>
-        <div style="margin-bottom: 10px;">
-            <a href="mailto:laura@laroccaskincare.com" style="color: #999; text-decoration: none;">laura@laroccaskincare.com</a> 
-            &nbsp;&bull;&nbsp; 
-            <a href="tel:8186920103" style="color: #999; text-decoration: none;">818-692-0103</a>
-            &nbsp;&bull;&nbsp; 
-            <a href="https://www.imdb.com/name/nm0217934/" target="_blank" style="color: #999; text-decoration: none;">IMDb</a>
-        </div>
-        <div>
-            &copy; 2026 LAURA LAROCCA &nbsp;&bull;&nbsp; IATSE LOCAL 706
-        </div>
-    </footer>
+<footer>
+    <div style="margin-bottom: 10px;">
+        <a href="mailto:laura@laroccaskincare.com" style="color: #999; text-decoration: none;">laura@laroccaskincare.com</a> 
+        &nbsp;&bull;&nbsp; 
+        <a href="tel:8186920103" style="color: #999; text-decoration: none;">818-692-0103</a>
+        &nbsp;&bull;&nbsp; 
+        <a href="https://www.imdb.com/name/nm0217934/" target="_blank" style="color: #999; text-decoration: none;">IMDb</a>
+    </div>
+    <div>
+        &copy; 2026 LAURA LAROCCA &nbsp;&bull;&nbsp; IATSE LOCAL 706
+    </div>
+</footer>
 
 </body>
 </html>
