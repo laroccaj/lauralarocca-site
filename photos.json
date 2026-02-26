@@ -1,7 +1,6 @@
 [
   { "src": "assets/images/young-sheldon-photo-shoot.jpg", "alt": "Young Sheldon Cast Photo Shoot", "caption": "Young Sheldon: Series S4" },
   { "src": "assets/images/melissa-peterman.jpg", "alt": "Melissa Peterman styling", "caption": "Melissa Peterman (1989 style)" },
-  { "src": "assets/images/the-unicorn-photoshoot.jpg", "alt": "The Unicorn Cast Photo Shoot", "caption": "The Unicorn Pilot" },
   { "src": "assets/images/sheldon-as-george.jpg", "alt": "Sheldon as George Cooper", "caption": "Character Transformation: Sheldon as George" },
   { "src": "assets/images/georgie-as-old-man.jpg", "alt": "Georgie aged with hair", "caption": "Aging Tech: Georgie as Old Man" },
   { "src": "assets/images/david-hasselhoff-wig.jpg", "alt": "Custom wig for David Hasselhoff", "caption": "Wig Construction and Styling: David Hasselhoff" },
@@ -17,6 +16,7 @@
   { "src": "assets/images/lance-lion.jpg", "alt": "Lance Barber in lion styling", "caption": "Lance Barber Character Design: Halloween Episode" },
   { "src": "assets/images/cop1.jpg", "alt": "Young Sheldon Police Officer styling", "caption": "Young Sheldon: Period Styling" },
   { "src": "assets/images/everythings-gonna-be-okay.jpg", "alt": "Everything's Gonna Be Okay on set styling", "caption": "Everything's Gonna Be Okay" },
+  { "src": "assets/images/the-unicorn-photoshoot.jpg", "alt": "The Unicorn Cast Photo Shoot", "caption": "The Unicorn Pilot" },
   { "src": "assets/images/champions-family.jpg", "alt": "Cast of Champions", "caption": "Champions Photoshoot (NBC)" },
   { "src": "assets/images/mindy-couch.jpg", "alt": "Mindy Kaling styling", "caption": "Mindy Kaling: The Mindy Project" },
   { "src": "assets/images/mindy-emmymag.jpg", "alt": "Mindy Kaling for Emmy Magazine", "caption": "Editorial: Emmy Magazine, Mindy Kaling" },
