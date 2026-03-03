@@ -6,11 +6,15 @@
     <title>Gallery | Laura LaRocca | Hair Department Head</title>
     <meta name="description" content="Production gallery and on-set photography for Hair Department Head Laura LaRocca. Highlights from Young Sheldon, The Mindy Project, and more.">
     
+    <link rel="canonical" href="https://www.lauralarocca.com/photos.html" />
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ImageGallery",
       "name": "Laura LaRocca Production Gallery",
+      "url": "https://www.lauralarocca.com/photos.html",
+      "mainEntityOfPage": "https://www.lauralarocca.com/photos.html",
       "author": {
         "@type": "Person",
         "name": "Laura LaRocca"
@@ -50,7 +54,7 @@
         .gallery-item {
             position: relative;
             overflow: hidden;
-            aspect-ratio: 1 / 1; /* Square grid looks modern and professional */
+            aspect-ratio: 1 / 1;
             background: var(--stone);
             border: 1px solid #eee;
             cursor: pointer;
@@ -125,9 +129,9 @@
     </div>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="credits.html">Full Credits</a>
-        <a href="photos.html" class="active">Photos</a>
+        <a href="/">Home</a>
+        <a href="/credits.html">Full Credits</a>
+        <a href="/photos.html" class="active">Photos</a>
     </nav>
 
     <div class="container">
@@ -190,7 +194,7 @@
         function openLightbox(src) {
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox').style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Stop scrolling when open
+            document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
